@@ -19,19 +19,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Render the initial page with the number input form
 app.get("/", (req, res) => {
-  res.render("views/index.hbs");
+  res.render("index.hbs");
 });
 
 app.get("/happy", (req, res) => {
   let leg1 = req.query.leg1;
   let leg2 = req.query.leg2;
-  res.render("views/draw.hbs", {leg1, leg2});
+  res.render("happy.hbs", {leg1, leg2});
 });
 
 app.post("/happy", (req, res) => {
   let leg1 = req.body.leg1;
   let leg2 = req.body.leg2;
-  res.render("views/draw.hbs", {leg1, leg2});
+  res.render("happy.hbs", {leg1, leg2});
 });
 
 // Create express route binder for draw.hbs and get the data from the url as parameters
